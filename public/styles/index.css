@@ -1,0 +1,243 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy';
+  font-weight: 700;
+  user-select: none; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 2.5% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #07090F; }
+  body::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    /* 
+        background-image: url('');
+        background-repeat: repeat;
+        opacity: 0.1;
+        */ }
+  body * {
+    position: relative; }
+  body .container {
+    display: grid;
+    grid-template-columns: 87% 8%;
+    grid-template-rows: 87% 8%;
+    gap: 5%;
+    height: 90%;
+    aspect-ratio: 1; }
+    body .container .table-container {
+      padding: 5%;
+      box-shadow: 0.3em 0.3em 0.5em 0.05em rgba(252, 252, 255, 0.2); }
+      body .container .table-container .the-table {
+        width: 100%;
+        aspect-ratio: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5%;
+        background-image: url("../assets/cell-border.svg");
+        background-size: 105%;
+        background-position: center;
+        overflow: hidden; }
+        body .container .table-container .the-table * {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        body .container .table-container .the-table *::before {
+          width: 80%;
+          aspect-ratio: 1;
+          content: '';
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute; }
+        body .container .table-container .the-table .O-marker::before {
+          background-image: url("../assets/O-marker.svg"); }
+        body .container .table-container .the-table .X-marker::before {
+          background-image: url("../assets/X-marker.svg"); }
+    body .container .properties {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 85% 0%; }
+      body .container .properties .O-marker-wins {
+        color: #6DB1BF; }
+        body .container .properties .O-marker-wins .property-header {
+          background: url("../assets/O-marker-sm.svg"), #07090F; }
+      body .container .properties .X-marker-wins {
+        color: #a6d3a0; }
+        body .container .properties .X-marker-wins .property-header {
+          background: url("../assets/X-marker-sm.svg"), #07090F;
+          background-size: 65% !important; }
+      body .container .properties .O-X-marker-draws {
+        color: #707070; }
+        body .container .properties .O-X-marker-draws .property-header {
+          background: #07090F; }
+      body .container .properties .property {
+        width: 100%;
+        height: 26%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative; }
+        body .container .properties .property .property-header {
+          width: 70%;
+          aspect-ratio: 1;
+          position: absolute;
+          z-index: 2;
+          transform: translateY(-3em);
+          background-repeat: no-repeat;
+          background-size: 72.5%;
+          background-position: center; }
+        body .container .properties .property .both-header {
+          width: 90% !important;
+          aspect-ratio: 0 !important;
+          transform: translateY(-2.75em);
+          font-size: 1.1em;
+          text-align: center; }
+        body .container .properties .property .border-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 80%;
+          width: 100%;
+          border: 0.01em solid #FCFCFF; }
+          body .container .properties .property .border-container .property-value-container {
+            width: 90%;
+            height: 70%;
+            overflow: hidden; }
+            body .container .properties .property .border-container .property-value-container .property-value {
+              width: 100%;
+              height: 100%;
+              padding: 10% 30%;
+              text-align: center;
+              font-size: 1.2em;
+              line-height: 1em;
+              word-wrap: break-word; }
+        body .container .properties .property .property-footer {
+          width: 85%;
+          position: absolute;
+          z-index: 2;
+          transform: translateY(2.8em);
+          background-color: #07090F; }
+          body .container .properties .property .property-footer p {
+            text-align: center; }
+    body .container .settings {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0% 7.8%; }
+      body .container .settings .setting {
+        width: 26%;
+        height: 100%; }
+      body .container .settings .your-id {
+        color: #a6d3a0; }
+      body .container .settings .against-id {
+        color: #6DB1BF; }
+      body .container .settings .id-setting {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        position: relative; }
+        body .container .settings .id-setting .hash {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          z-index: 2;
+          transform: translateX(0.05em);
+          height: 70%;
+          width: 0.4em;
+          background-color: #07090F;
+          font-size: 2.3em;
+          font-weight: 500; }
+        body .container .settings .id-setting .border-container {
+          display: flex;
+          align-items: center;
+          width: 90%;
+          height: 100%;
+          margin-left: 10%;
+          border: 0.05em solid #FCFCFF;
+          padding: 0% 2% 0% 15%; }
+          body .container .settings .id-setting .border-container .id-value-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80%; }
+            body .container .settings .id-setting .border-container .id-value-container .id-value {
+              width: 100%;
+              height: 100%;
+              font-size: 1.7em;
+              font-weight: 600;
+              border: none;
+              outline: none;
+              background-color: transparent;
+              color: inherit; }
+          body .container .settings .id-setting .border-container .who-own-id-container {
+            position: absolute;
+            transform: translate(2em, 1.4em);
+            background-color: #07090F;
+            padding: 0% 0.2em; }
+            body .container .settings .id-setting .border-container .who-own-id-container .who-own-id {
+              font-size: 0.8em; }
+          body .container .settings .id-setting .border-container .yours-id {
+            transform: translate(2.7em, 1.4em); }
+      body .container .settings .mode-container {
+        height: 100%;
+        display: flex;
+        justify-content: center; }
+        body .container .settings .mode-container .mode-border {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 90%;
+          height: 100%;
+          border-radius: 100px;
+          border: 0.05em solid #FCFCFF;
+          padding: 0% 0.4em;
+          position: relative; }
+          body .container .settings .mode-container .mode-border .left {
+            transform: translateX(-0.4em); }
+          body .container .settings .mode-container .mode-border .right {
+            transform: translateX(3.15em); }
+          body .container .settings .mode-container .mode-border .mode-circle {
+            position: absolute;
+            transition: 0.25s ease-in-out;
+            height: 100%;
+            aspect-ratio: 1;
+            border-radius: 100px;
+            background-color: #FCFCFF; }
+          body .container .settings .mode-container .mode-border .single-player, body .container .settings .mode-container .mode-border .multi-player {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.25s ease-in-out;
+            height: 70%;
+            aspect-ratio: 1;
+            position: relative;
+            z-index: 3; }
+            body .container .settings .mode-container .mode-border .single-player svg, body .container .settings .mode-container .mode-border .multi-player svg {
+              width: 100%;
+              aspect-ratio: 858/626; }
+              body .container .settings .mode-container .mode-border .single-player svg use, body .container .settings .mode-container .mode-border .multi-player svg use {
+                width: 100%;
+                aspect-ratio: 858/626; }
+          body .container .settings .mode-container .mode-border .active-status {
+            fill: #07090F; }
+          body .container .settings .mode-container .mode-border .deactive-status {
+            fill: #FCFCFF; }
+    body .container .display-mode-control-container {
+      background-image: url("../assets/the-sun.svg");
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: center; }

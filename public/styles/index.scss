@@ -1,0 +1,399 @@
+$my-black:#07090F; //:#0C1821
+$my-white:#FCFCFF;
+$my-gray: #707070;
+$my-green:#a6d3a0;
+$my-blue: #6DB1BF;
+$my-yellow:#D5A021;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Gilroy';
+    font-weight: 700;
+
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 2.5% 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $my-black;
+
+    &::before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        content: '';
+        /* 
+        background-image: url('');
+        background-repeat: repeat;
+        opacity: 0.1;
+        */
+    }
+
+    & * {
+        position: relative;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 87% 8%;
+        grid-template-rows: 87% 8%;
+        gap: 5%;
+
+        height: 90%;
+        aspect-ratio: 1;
+
+        .table-container {
+            padding: 5%;
+            box-shadow: 0.3em 0.3em 0.5em 0.05em rgba($color: $my-white, $alpha: 0.2);
+
+            .the-table {
+                width: 100%;
+                aspect-ratio: 1;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: 5%;
+
+                background-image: url('../assets/cell-border.svg');
+                background-size: 105%;
+                background-position: center;
+                overflow: hidden;
+
+                * {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                *::before {
+                    width: 80%;
+                    aspect-ratio: 1;
+
+                    content: '';
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: absolute;
+                }
+
+                .O-marker::before {
+                    background-image: url('../assets/O-marker.svg');
+                }
+
+                .X-marker::before {
+                    background-image: url('../assets/X-marker.svg');
+                }
+
+            }
+
+        }
+
+        .properties {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 85% 0%; //unkwown bug
+
+
+            .O-marker-wins {
+                color: $my-blue;
+
+                .property-header {
+                    background: url('../assets/O-marker-sm.svg'), $my-black;
+                }
+            }
+
+            .X-marker-wins {
+                color: $my-green;
+
+                .property-header {
+                    background: url('../assets/X-marker-sm.svg'), $my-black;
+                    background-size: 65% !important;
+                }
+            }
+
+            .O-X-marker-draws {
+                color: $my-gray;
+
+                .property-header {
+                    background: $my-black;
+                }
+            }
+
+            .property {
+                width: 100%;
+                height: 26%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                position: relative;
+
+                .property-header {
+                    width: 70%;
+                    aspect-ratio: 1;
+
+                    position: absolute;
+                    z-index: 2;
+                    transform: translateY(-3em);
+
+                    background-repeat: no-repeat;
+                    background-size: 72.5%;
+                    background-position: center;
+                }
+
+                .both-header {
+                    width: 90% !important;
+                    aspect-ratio: 0 !important;
+                    transform: translateY(-2.75em);
+                    font-size: 1.1em;
+                    text-align: center;
+                }
+
+                .border-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    position: absolute;
+
+                    height: 80%;
+                    width: 100%;
+                    border: 0.01em solid $my-white;
+
+                    .property-value-container {
+                        width: 90%;
+                        height: 70%;
+                        overflow: hidden;
+
+                        .property-value {
+                            width: 100%;
+                            height: 100%;
+                            padding: 10% 30%;
+                            text-align: center;
+                            font-size: 1.2em;
+                            line-height: 1em;
+                            word-wrap: break-word;
+                        }
+
+                    }
+
+                }
+
+                .property-footer {
+                    width: 85%;
+
+                    position: absolute;
+                    z-index: 2;
+                    transform: translateY(2.80em);
+
+                    background-color: $my-black;
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+            }
+
+        }
+
+        .settings {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0% 7.8%;
+
+            .setting {
+                width: 26%;
+                height: 100%;
+            }
+
+            .your-id{
+                color: $my-green;
+            }
+
+            .against-id{
+                color: $my-blue;
+            }
+
+            .id-setting{
+
+                display: flex;
+                justify-items: center;
+                align-items: center;
+
+                position: relative;
+
+                .hash{
+                    display: flex;
+                    align-items: center;
+
+                    position: absolute;
+                    z-index: 2;
+                    transform: translateX(0.05em);
+
+                    height: 70%;
+                    width: 0.4em;
+                    background-color: $my-black;
+
+                    font-size: 2.3em;
+                    font-weight: 500;
+                }
+
+                .border-container{
+                    display: flex;
+                    align-items: center;
+
+                    width: 90%;
+                    height: 100%;
+
+                    margin-left: 10%;
+                    
+                    border: 0.05em solid $my-white;
+
+                    padding:0% 2% 0% 15%;
+
+                    .id-value-container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        width: 100%;
+                        height: 80%;
+
+                        .id-value{
+                            width: 100%;
+                            height: 100%;
+                            font-size: 1.7em;
+                            font-weight: 600;
+                            border: none;
+                            outline: none;
+                            background-color: transparent;
+                            color: inherit;
+                        }
+                    }
+
+                    .who-own-id-container{
+                        position: absolute;
+                        transform: translate(2em, 1.4em);
+ 
+                        background-color: $my-black;
+                        padding: 0% 0.2em;
+                        
+                        .who-own-id{
+                            font-size: 0.8em;
+                        }
+                    }
+
+                    .yours-id{
+                        transform: translate(2.7em, 1.4em);
+                    }
+                }
+
+            }
+
+            .mode-container {
+                height: 100%;
+
+                display: flex;
+                justify-content: center;
+                
+                .mode-border{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    width: 90%;
+                    height: 100%;
+                    
+                    border-radius: 100px;
+                    border: 0.05em solid $my-white;
+
+                    padding: 0% 0.4em;
+
+                    position: relative;
+
+                    .left{
+                        transform: translateX(-0.4em);
+                    }
+
+                    .right{
+                        transform: translateX(3.15em)
+                    }
+
+                    .mode-circle{
+                        position: absolute;
+                        transition: 0.25s ease-in-out;
+                
+
+                        height: 100%;
+                        aspect-ratio: 1;
+                        
+                        border-radius: 100px;
+                        background-color: $my-white;
+                    }
+
+                    .single-player, .multi-player{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        transition: 0.25s ease-in-out;
+
+                        height: 70%;
+                        aspect-ratio: 1;
+
+                        position: relative;
+                        z-index: 3;
+
+                        svg{
+                            width: 100%;
+                            aspect-ratio: 858/626;
+
+                            use{
+                                width: 100%;
+                                aspect-ratio: 858/626;
+                            }
+                        }
+                    }
+
+                    .active-status{
+                        fill: $my-black;
+                    }
+
+                    .deactive-status{
+                        fill: $my-white;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .display-mode-control-container {
+            background-image: url('../assets/the-sun.svg');
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}

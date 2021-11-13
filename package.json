@@ -1,0 +1,35 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Tic-tac-toe multiplayer and singleplayer game, in addition to a modern design.",
+  "main": "router.js",
+  "scripts": {
+    "test": "npm start",
+    "active": "npm run program",
+    "scss": "node-sass -o ./public/styles/ ./public/styles/",
+    "watch:scss": "onchange \"./public/styles/*.scss\" -- npm run scss",
+    "program": "parallelshell \"npm run watch:scss\" \"node router.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HediMuhamad/Tic-Tac-Toe.git"
+  },
+  "author": "Tic-Tac-Toe, online, game",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HediMuhamad/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/HediMuhamad/Tic-Tac-Toe#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "node-sass": "^6.0.1",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.2",
+    "socket.io": "^4.3.2"
+  }
+}

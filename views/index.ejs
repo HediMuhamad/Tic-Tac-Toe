@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe: Playing with ...</title>
+    <link rel="stylesheet" href="/assets/fonts/stylesheet-gilroy.css">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="table-container">
+            <div class="the-table">
+                <div id="first"   ></div>
+                <div id="second"  ></div>
+                <div id="third"   ></div>
+                <div id="fourth"  ></div>
+                <div id="fifth"   ></div>
+                <div id="sixth"   ></div>
+                <div id="seventh" ></div>
+                <div id="eighth"  ></div>
+                <div id="ninth"   ></div>
+            </div>
+        </div>
+        <div class="properties">
+            <div class="property O-marker-wins">
+                <div class="property-header"></div>
+                <div class="border-container">
+                    <div class="property-value-container">
+                        <p class="property-value">123</p>
+                    </div>
+                </div>
+                <div class="property-footer"><p class="property-footer-text">Wins</p></div>
+            </div>
+            <div class="property X-marker-wins">
+                <div class="property-header"></div>
+                <div class="border-container">
+                    <div class="property-value-container">
+                        <p class="property-value">123</p>
+                    </div>
+                </div>
+                <div class="property-footer"><p class="property-footer-text">Wins</p></div>
+            </div>
+            <div class="property O-X-marker-draws">
+                <div class="property-header both-header">Both</div>
+                <div class="border-container">
+                    <div class="property-value-container">
+                        <p class="property-value">123</p>
+                    </div>
+                </div>
+                <div class="property-footer"><p class="property-footer-text">Draw</p></div>
+            </div>
+        </div>
+        <div class="settings">
+            <div class="setting id-setting your-id">
+                <div class="hash">#</div>
+                <div class="border-container">
+                    <div class="id-value-container">
+                        <input type="text" maxlength="5" disabled class="id-value" name="your-id">
+                    </div>
+                    <div class="who-own-id-container yours-id">
+                        <div class="who-own-id">your's</div>
+                    </div>
+                </div>
+            </div>
+            <div class="setting id-setting against-id">
+                <div class="hash">#</div>
+                <div class="border-container">
+                    <div class="id-value-container">
+                        <input type="text" maxlength="5" class="id-value" name="against-id" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                    </div>
+                    <div class="who-own-id-container">
+                        <div class="who-own-id">against</div>
+                    </div>
+                </div>
+            </div>
+            <div class="setting">
+                <div class="mode-container">
+                    <div class="mode-border">
+                        <div class="mode-circle left"></div>
+                        <div class="single-player active-status">
+                            <svg><use href="assets/single-user.svg#Layer_1"></use></svg>
+                        </div>
+                        <div class="multi-player deactive-status">
+                            <svg><use href="assets/multi-user.svg#Layer_1"></use></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="display-mode-control-container"></div>
+        
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
