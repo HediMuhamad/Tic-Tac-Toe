@@ -6,6 +6,22 @@
   font-weight: 700;
   user-select: none; }
 
+.dark-theme {
+  --background-color: #07090F;
+  --foreground-color: #FCFCFF;
+  --foreground-color-rgb: 252, 252, 255;
+  --opacity: 0.2; }
+  .dark-theme .display-mode-control-container {
+    background-image: url("../assets/the-sun.svg"); }
+
+.light-theme {
+  --background-color: #FCFCFF;
+  --foreground-color: #07090F;
+  --foreground-color-rgb: 7, 9, 15;
+  --opacity: 0.2; }
+  .light-theme .display-mode-control-container {
+    background-image: url("../assets/the-moon.svg"); }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -13,7 +29,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #07090F; }
+  background-color: var(--background-color); }
   body::before {
     width: 100%;
     height: 100%;
@@ -35,7 +51,7 @@ body {
     aspect-ratio: 1; }
     body .container .table-container {
       padding: 5%;
-      box-shadow: 0.3em 0.3em 0.5em 0.05em rgba(252, 252, 255, 0.2); }
+      box-shadow: 0.3em 0.3em 0.5em 0.05em rgba(var(--foreground-color-rgb), var(--opacity)); }
       body .container .table-container .the-table {
         width: 100%;
         aspect-ratio: 1;
@@ -71,16 +87,16 @@ body {
       body .container .properties .O-marker-wins {
         color: #6DB1BF; }
         body .container .properties .O-marker-wins .property-header {
-          background: url("../assets/O-marker-sm.svg"), #07090F; }
+          background: url("../assets/O-marker-sm.svg"), var(--background-color); }
       body .container .properties .X-marker-wins {
         color: #a6d3a0; }
         body .container .properties .X-marker-wins .property-header {
-          background: url("../assets/X-marker-sm.svg"), #07090F;
+          background: url("../assets/X-marker-sm.svg"), var(--background-color);
           background-size: 65% !important; }
       body .container .properties .O-X-marker-draws {
         color: #707070; }
         body .container .properties .O-X-marker-draws .property-header {
-          background: #07090F; }
+          background: var(--background-color); }
       body .container .properties .property {
         width: 100%;
         height: 26%;
@@ -111,7 +127,7 @@ body {
           position: absolute;
           height: 80%;
           width: 100%;
-          border: 0.01em solid #FCFCFF; }
+          border: 0.01em solid var(--foreground-color); }
           body .container .properties .property .border-container .property-value-container {
             width: 90%;
             height: 70%;
@@ -129,7 +145,7 @@ body {
           position: absolute;
           z-index: 2;
           transform: translateY(2.8em);
-          background-color: #07090F; }
+          background-color: var(--background-color); }
           body .container .properties .property .property-footer p {
             text-align: center; }
     body .container .settings {
@@ -157,7 +173,7 @@ body {
           transform: translateX(0.05em);
           height: 70%;
           width: 0.4em;
-          background-color: #07090F;
+          background-color: var(--background-color);
           font-size: 2.3em;
           font-weight: 500; }
         body .container .settings .id-setting .border-container {
@@ -166,8 +182,8 @@ body {
           width: 90%;
           height: 100%;
           margin-left: 10%;
-          border: 0.05em solid #FCFCFF;
-          padding: 0% 2% 0% 15%; }
+          border: 0.05em solid var(--foreground-color);
+          padding: 0% 5% 0% 12%; }
           body .container .settings .id-setting .border-container .id-value-container {
             display: flex;
             justify-content: center;
@@ -175,6 +191,7 @@ body {
             width: 100%;
             height: 80%; }
             body .container .settings .id-setting .border-container .id-value-container .id-value {
+              text-align: center;
               width: 100%;
               height: 100%;
               font-size: 1.7em;
@@ -186,7 +203,7 @@ body {
           body .container .settings .id-setting .border-container .who-own-id-container {
             position: absolute;
             transform: translate(2em, 1.4em);
-            background-color: #07090F;
+            background-color: var(--background-color);
             padding: 0% 0.2em; }
             body .container .settings .id-setting .border-container .who-own-id-container .who-own-id {
               font-size: 0.8em; }
@@ -203,25 +220,25 @@ body {
           width: 90%;
           height: 100%;
           border-radius: 100px;
-          border: 0.05em solid #FCFCFF;
+          border: 0.05em solid var(--foreground-color);
           padding: 0% 0.4em;
           position: relative; }
+          body .container .settings .mode-container .mode-border * {
+            transition: 0.25s ease-in-out; }
           body .container .settings .mode-container .mode-border .left {
             transform: translateX(-0.4em); }
           body .container .settings .mode-container .mode-border .right {
             transform: translateX(3.15em); }
           body .container .settings .mode-container .mode-border .mode-circle {
             position: absolute;
-            transition: 0.25s ease-in-out;
             height: 100%;
             aspect-ratio: 1;
             border-radius: 100px;
-            background-color: #FCFCFF; }
+            background-color: var(--foreground-color); }
           body .container .settings .mode-container .mode-border .single-player, body .container .settings .mode-container .mode-border .multi-player {
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: 0.25s ease-in-out;
             height: 70%;
             aspect-ratio: 1;
             position: relative;
@@ -233,11 +250,10 @@ body {
                 width: 100%;
                 aspect-ratio: 858/626; }
           body .container .settings .mode-container .mode-border .active-status {
-            fill: #07090F; }
+            fill: var(--background-color); }
           body .container .settings .mode-container .mode-border .deactive-status {
-            fill: #FCFCFF; }
+            fill: var(--foreground-color); }
     body .container .display-mode-control-container {
-      background-image: url("../assets/the-sun.svg");
       background-size: 70%;
       background-repeat: no-repeat;
       background-position: center; }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/fonts/stylesheet-gilroy.css">
     <link rel="stylesheet" href="/styles/index.css">
 </head>
-<body>
+<body class="dark-theme">
     <div class="container">
         <div class="table-container">
             <div class="the-table">
@@ -68,7 +68,7 @@
                 <div class="hash">#</div>
                 <div class="border-container">
                     <div class="id-value-container">
-                        <input type="text" maxlength="5" class="id-value" name="against-id" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        <input type="text" maxlength="5" class="id-value" name="against-id" placeholder="AUTO" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                     </div>
                     <div class="who-own-id-container">
                         <div class="who-own-id">against</div>
@@ -77,19 +77,19 @@
             </div>
             <div class="setting">
                 <div class="mode-container">
-                    <div class="mode-border">
+                    <div onclick="modeBorderFunction(event)" class="mode-border">
                         <div class="mode-circle left"></div>
-                        <div class="single-player active-status">
+                        <div class="single-player player-mode active-status">
                             <svg><use href="assets/single-user.svg#Layer_1"></use></svg>
                         </div>
-                        <div class="multi-player deactive-status">
+                        <div class="multi-player player-mode deactive-status">
                             <svg><use href="assets/multi-user.svg#Layer_1"></use></svg>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="display-mode-control-container"></div>
+        <div class="display-mode-control-container dark-now" onclick="themeSwitchController(event)"></div>
         
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
