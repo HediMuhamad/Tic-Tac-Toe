@@ -25,7 +25,6 @@
 body {
   width: 100vw;
   height: 100vh;
-  padding: 2.5% 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,10 +46,10 @@ body {
     grid-template-columns: 87% 8%;
     grid-template-rows: 87% 8%;
     gap: 5%;
-    height: 90%;
+    height: 40em;
     aspect-ratio: 1; }
     body .container .table-container {
-      padding: 5%;
+      padding: 2em;
       box-shadow: 0.3em 0.3em 0.5em 0.05em rgba(var(--foreground-color-rgb), var(--opacity)); }
       body .container .table-container .the-table {
         width: 100%;
@@ -83,7 +82,8 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 85% 0%; }
+      align-items: center;
+      padding: 3em 0%; }
       body .container .properties .O-marker-wins {
         color: #6DB1BF; }
         body .container .properties .O-marker-wins .property-header {
@@ -110,14 +110,14 @@ body {
           aspect-ratio: 1;
           position: absolute;
           z-index: 2;
-          transform: translateY(-3em);
+          transform: translateY(-135%);
           background-repeat: no-repeat;
           background-size: 72.5%;
           background-position: center; }
         body .container .properties .property .both-header {
           width: 90% !important;
           aspect-ratio: 0 !important;
-          transform: translateY(-2.75em);
+          transform: translateY(-230%);
           font-size: 1.1em;
           text-align: center; }
         body .container .properties .property .border-container {
@@ -129,22 +129,27 @@ body {
           width: 100%;
           border: 0.01em solid var(--foreground-color); }
           body .container .properties .property .border-container .property-value-container {
-            width: 90%;
+            width: 100%;
             height: 70%;
-            overflow: hidden; }
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
             body .container .properties .property .border-container .property-value-container .property-value {
-              width: 100%;
+              width: 50%;
               height: 100%;
-              padding: 10% 30%;
+              margin-top: 10%;
+              font-size: 1.75em;
+              line-height: 100%;
               text-align: center;
-              font-size: 1.2em;
-              line-height: 1em;
-              word-wrap: break-word; }
+              word-wrap: break-word;
+              writing-mode: vertical-lr;
+              text-orientation: upright; }
         body .container .properties .property .property-footer {
           width: 85%;
           position: absolute;
           z-index: 2;
-          transform: translateY(2.8em);
+          transform: translateY(225%);
           background-color: var(--background-color); }
           body .container .properties .property .property-footer p {
             text-align: center; }
@@ -152,7 +157,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0% 7.8%; }
+      padding: 0% 3em; }
       body .container .settings .setting {
         width: 26%;
         height: 100%; }
@@ -168,11 +173,12 @@ body {
         body .container .settings .id-setting .hash {
           display: flex;
           align-items: center;
+          justify-content: center;
           position: absolute;
           z-index: 2;
-          transform: translateX(0.05em);
+          transform: translateX(10%);
           height: 70%;
-          width: 0.4em;
+          width: min-content;
           background-color: var(--background-color);
           font-size: 2.3em;
           font-weight: 500; }
@@ -202,58 +208,118 @@ body {
               color: inherit; }
           body .container .settings .id-setting .border-container .who-own-id-container {
             position: absolute;
-            transform: translate(2em, 1.4em);
-            background-color: var(--background-color);
-            padding: 0% 0.2em; }
+            transform: translateY(1.5em);
+            width: 80%;
+            display: flex;
+            justify-content: end;
+            align-items: center; }
             body .container .settings .id-setting .border-container .who-own-id-container .who-own-id {
+              width: fit-content;
+              background-color: var(--background-color);
+              padding: 0% 0.3em;
               font-size: 0.8em; }
-          body .container .settings .id-setting .border-container .yours-id {
-            transform: translate(2.7em, 1.4em); }
       body .container .settings .mode-container {
         height: 100%;
         display: flex;
         justify-content: center; }
+        body .container .settings .mode-container .single-player-mode .single-player {
+          fill: var(--background-color); }
+        body .container .settings .mode-container .single-player-mode .multi-player {
+          fill: var(--foreground-color); }
+        body .container .settings .mode-container .single-player-mode .mode-circle {
+          margin-left: 0%; }
+        body .container .settings .mode-container .multi-player-mode .single-player {
+          fill: var(--foreground-color); }
+        body .container .settings .mode-container .multi-player-mode .multi-player {
+          fill: var(--background-color); }
+        body .container .settings .mode-container .multi-player-mode .mode-circle {
+          margin-left: 53.5%; }
         body .container .settings .mode-container .mode-border {
           display: flex;
-          justify-content: space-between;
           align-items: center;
           width: 90%;
           height: 100%;
           border-radius: 100px;
           border: 0.05em solid var(--foreground-color);
-          padding: 0% 0.4em;
           position: relative; }
           body .container .settings .mode-container .mode-border * {
             transition: 0.25s ease-in-out; }
-          body .container .settings .mode-container .mode-border .left {
-            transform: translateX(-0.4em); }
-          body .container .settings .mode-container .mode-border .right {
-            transform: translateX(3.15em); }
           body .container .settings .mode-container .mode-border .mode-circle {
             position: absolute;
             height: 100%;
             aspect-ratio: 1;
+            transition: 0.25s ease-in-out;
             border-radius: 100px;
             background-color: var(--foreground-color); }
-          body .container .settings .mode-container .mode-border .single-player, body .container .settings .mode-container .mode-border .multi-player {
+          body .container .settings .mode-container .mode-border .icon-container {
+            width: 100%;
+            height: 100%;
+            padding: 0% 0.7em 0% 0.75em;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70%;
-            aspect-ratio: 1;
-            position: relative;
-            z-index: 3; }
-            body .container .settings .mode-container .mode-border .single-player svg, body .container .settings .mode-container .mode-border .multi-player svg {
-              width: 100%;
-              aspect-ratio: 858/626; }
-              body .container .settings .mode-container .mode-border .single-player svg use, body .container .settings .mode-container .mode-border .multi-player svg use {
+            justify-content: space-between;
+            align-items: center; }
+            body .container .settings .mode-container .mode-border .icon-container .single-player,
+            body .container .settings .mode-container .mode-border .icon-container .multi-player {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 70%;
+              aspect-ratio: 1;
+              position: relative;
+              z-index: 3; }
+              body .container .settings .mode-container .mode-border .icon-container .single-player svg,
+              body .container .settings .mode-container .mode-border .icon-container .multi-player svg {
                 width: 100%;
                 aspect-ratio: 858/626; }
-          body .container .settings .mode-container .mode-border .active-status {
-            fill: var(--background-color); }
-          body .container .settings .mode-container .mode-border .deactive-status {
-            fill: var(--foreground-color); }
+                body .container .settings .mode-container .mode-border .icon-container .single-player svg use,
+                body .container .settings .mode-container .mode-border .icon-container .multi-player svg use {
+                  width: 100%;
+                  aspect-ratio: 858/626; }
     body .container .display-mode-control-container {
       background-size: 70%;
       background-repeat: no-repeat;
       background-position: center; }
+
+@media (max-width: 715px) {
+  .container {
+    font-size: 15px; } }
+
+@media (max-width: 675px) {
+  .container {
+    font-size: 14px; } }
+
+@media (max-width: 625px) {
+  .container {
+    font-size: 13px; } }
+
+@media (max-width: 575px) {
+  .container {
+    font-size: 12px; } }
+
+@media (max-width: 525px) {
+  .container {
+    font-size: 11px; } }
+
+@media (max-width: 485px) {
+  .container {
+    font-size: 10px; } }
+
+@media (max-width: 435px) {
+  .container {
+    font-size: 9px; } }
+
+@media (max-width: 385px) {
+  .container {
+    font-size: 8px; } }
+
+@media (max-width: 360px) {
+  .container {
+    font-size: 7px; } }
+
+@media (max-width: 300px) {
+  .container {
+    font-size: 6px; } }
+
+@media (max-width: 270px) {
+  .container {
+    font-size: 5px; } }

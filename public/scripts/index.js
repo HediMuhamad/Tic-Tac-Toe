@@ -1,21 +1,17 @@
 const childrenOfThetable = Array.from($('.the-table').children());
 const cellMarkers = ['../assets/X-marker.svg', '../assets/O-marker.svg'];
 
-var modeCircle = ($('.mode-circle')[0]);
-var singlePlayerMode = $('.player-mode')[0];
-var multiPlayerMode  = $('.player-mode')[1];
+var currentTheme = 'light-theme';
+var nextTheme = 'dark-theme';
 
-var currentPlayerCirclePlace = 'left';
-var nextPlayerCirclePlace = 'right';
-
-var currentPlayerActivityStatus = 'active-status';
-var nextPlayerActivityStatus = 'deactive-status';
-
-var currentTheme = 'dark-theme';
-var nextTheme = 'light-theme';
+var currentPlayingMode = 'single-player-mode';
+var nextPlayingMode = 'multi-player-mode';
 
 var displayModeControlContainer = $('.display-mode-control-container')[0];
+const myId = (Math.floor((Math.random()*100000))-1);
+($('.id-value')[0]).value = myId;
 
+///////////////////////////////////////////////////////////////
 
 for(let i=0;i<childrenOfThetable.length;i++){
     const randomChance = Math.floor(Math.random()*2);
@@ -28,16 +24,8 @@ for(let i=0;i<childrenOfThetable.length;i++){
 }
 
 modeBorderFunction = (event)=>{
-    singlePlayerMode.classList.replace(currentPlayerActivityStatus, nextPlayerActivityStatus);
-    multiPlayerMode.classList.replace(nextPlayerActivityStatus, currentPlayerActivityStatus);
-    modeCircle.classList.replace(currentPlayerCirclePlace, nextPlayerCirclePlace);
-
-    modeCircle = ($('.mode-circle')[0]);
-    singlePlayerMode = $('.player-mode')[0];
-    multiPlayerMode  = $('.player-mode')[1];
-
-    currentPlayerCirclePlace = [nextPlayerCirclePlace, nextPlayerCirclePlace = currentPlayerCirclePlace][0];
-    currentPlayerActivityStatus = [nextPlayerActivityStatus, nextPlayerActivityStatus = currentPlayerActivityStatus][0];
+    $('.mode-border')[0].classList.replace(currentPlayingMode, nextPlayingMode);
+    currentPlayingMode = [nextPlayingMode, nextPlayingMode=currentPlayingMode][0];
 }
 
 
