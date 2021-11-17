@@ -371,7 +371,7 @@ body {
                         fill: var(--foreground-color);
                     }
 
-                    .mode-circle{
+                    .mode-circle {
                         margin-left: 0%;
                     }
 
@@ -389,7 +389,7 @@ body {
                         fill: var(--background-color);
                     }
 
-                    .mode-circle{
+                    .mode-circle {
                         margin-left: 53.5%;
                     }
 
@@ -407,7 +407,7 @@ body {
 
                     position: relative;
 
-                    & *{
+                    & * {
                         transition: 0.25s ease-in-out;
                     }
 
@@ -472,68 +472,74 @@ body {
 }
 
 
-@media (max-width:715px){
-    .container{
+@media (max-width: 765px) {
+    .container {
         font-size: 15px;
     }
 }
 
-@media (max-width:675px){
-    .container{
+@media (max-width: 725px) {
+    .container {
         font-size: 14px;
     }
 }
 
-@media (max-width:625px){
-    .container{
+@media (max-width: 675px) {
+    .container {
         font-size: 13px;
     }
 }
 
-@media (max-width:575px){
-    .container{
+@media (max-width: 625px) {
+    .container {
         font-size: 12px;
     }
 }
 
-@media (max-width:525px){
-    .container{
+@media (max-width: 575px) {
+    .container {
         font-size: 11px;
     }
 }
 
-@media (max-width:485px){
-    .container{
+@media (max-width: 535px) {
+    .container {
         font-size: 10px;
     }
 }
 
-@media (max-width:435px){
-    .container{
+@media (max-width: 485px) {
+    .container {
         font-size: 9px;
     }
 }
 
-@media (max-width:385px){
-    .container{
+@media (max-width: 435px) {
+    .container {
         font-size: 8px;
     }
 }
 
-@media (max-width:360px){
-    .container{
+@media (max-width: 390px) {
+    .container {
         font-size: 7px;
     }
 }
 
-@media (max-width:300px){
-    .container{
+@media (max-width: 335px) {
+    .container {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-width: 310px) {
+    .container {
         font-size: 6px;
     }
 }
 
-@media (max-width:270px){
-    .container{
-        font-size: 5px;
+@media (max-width: 285px) {
+    .container {
+        font-size: 5.5px;
     }
 }

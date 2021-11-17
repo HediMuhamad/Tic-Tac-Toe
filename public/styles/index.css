@@ -280,46 +280,50 @@ body {
       background-repeat: no-repeat;
       background-position: center; }
 
-@media (max-width: 715px) {
+@media (max-width: 765px) {
   .container {
     font-size: 15px; } }
 
-@media (max-width: 675px) {
+@media (max-width: 725px) {
   .container {
     font-size: 14px; } }
 
-@media (max-width: 625px) {
+@media (max-width: 675px) {
   .container {
     font-size: 13px; } }
 
-@media (max-width: 575px) {
+@media (max-width: 625px) {
   .container {
     font-size: 12px; } }
 
-@media (max-width: 525px) {
+@media (max-width: 575px) {
   .container {
     font-size: 11px; } }
 
-@media (max-width: 485px) {
+@media (max-width: 535px) {
   .container {
     font-size: 10px; } }
 
-@media (max-width: 435px) {
+@media (max-width: 485px) {
   .container {
     font-size: 9px; } }
 
-@media (max-width: 385px) {
+@media (max-width: 435px) {
   .container {
     font-size: 8px; } }
 
-@media (max-width: 360px) {
+@media (max-width: 390px) {
   .container {
     font-size: 7px; } }
 
-@media (max-width: 300px) {
+@media (max-width: 335px) {
+  .container {
+    font-size: 6.5px; } }
+
+@media (max-width: 310px) {
   .container {
     font-size: 6px; } }
 
-@media (max-width: 270px) {
+@media (max-width: 285px) {
   .container {
-    font-size: 5px; } }
+    font-size: 5.5px; } }
