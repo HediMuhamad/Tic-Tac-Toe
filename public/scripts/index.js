@@ -53,17 +53,19 @@ themeSwitchController = (event) => {
 
 
 var smallestTimeDuration = 10000;
+var isLeftOdd = true;
+var isTopOdd = true;
 
 backCircleCreatorMethod = () => {
-    for (let index = 0; index < (Math.random() * 50) + 25; index++) {
+    for (let index = 0; index < (Math.random() * 20) + 25; index++) {
         $($('.blured-background')[0]).append('<div class="back-circle"></div>');
     }
 
     $('.back-circle').each(((index, circle) => {
 
         let startSize = (Math.random() * 20) + 10;
-        let startLeft = $(Math.random() * ($('body')[0]).clientWidth)[0];
-        let startTop = $(Math.random() * ($('body')[0]).clientHeight)[0];
+        let startLeft = $(Math.random() * ($('body')[0]).clientWidth)[0]-startSize*2;
+        let startTop = $(Math.random() * ($('body')[0]).clientHeight)[0]-startSize*2;
 
         $(circle).css({
             'background-color': `rgb(${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)})`,
@@ -74,35 +76,39 @@ backCircleCreatorMethod = () => {
     }));
 }
 
-backCircleDirectionMethod = (...params) => {
-
-    console.log(params);
+backCircleDirectionMethod = () => {
 
     $('.back-circle').each(((index, circle) => {
 
         let endSize = (Math.random() * 20) + 10;
-        let endLeft = ($(Math.random() * ($('body')[0]).clientWidth)[0]) - params[0];
-        let endTop = ($(Math.random() * ($('body')[0]).clientHeight)[0]) - params[1];
+        let endLeft = ($(Math.random() * ($('body')[0]).clientWidth)[0])/2-endSize;
+        let endTop = ($(Math.random() * ($('body')[0]).clientHeight)[0])/2-endSize;
         let timeDuration = (Math.random() * 10) + 10;
         smallestTimeDuration = smallestTimeDuration > timeDuration ? timeDuration : smallestTimeDuration;
 
         $(circle).css({
-            'background-color': `rgb(${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)})`,
-            'transition': `${smallestTimeDuration}s ease-in-out`,
-            'transform': `translate(${endLeft}px, ${endTop}px)`,
+            'background-color': `rgb(${Math.floor(Math.random()*100)+100},${Math.floor(Math.random()*100)+100},${Math.floor(Math.random()*100)+100})`,
+            'transition': `${smallestTimeDuration/5}s ease-in-out`,
+            'transform': `translate(${isLeftOdd==true?'-':''+endLeft}px, ${isTopOdd==true?'':'-'+endTop}px)`,
             'width': `${endSize}em`
         });
+
+
+        isLeftOdd = !isLeftOdd;
+        isTopOdd = !isTopOdd
+
     }));
 }
 
 CircleColorization = () => {
+    backCircleCreatorMethod()
+    backCircleDirectionMethod();
 
-    backCircleDirectionMethod(backCircleCreatorMethod());
 
-
-    setTimeout(() => {
-        backCircleDirectionMethod
-    }, smallestTimeDuration);
+    setInterval(() => {
+        console.log(smallestTimeDuration);
+        backCircleDirectionMethod();
+    }, smallestTimeDuration*120);
 
 }
 

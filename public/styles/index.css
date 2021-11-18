@@ -39,7 +39,7 @@ body {
     scale: 1.1;
     overflow: hidden;
     background-color: transparent;
-    filter: blur(50px); }
+    filter: blur(100px); }
     body .blured-background::before {
       content: '';
       width: 100%;
@@ -67,7 +67,8 @@ body {
       content: '';
       width: 100%;
       height: 100%;
-      position: absolute; }
+      position: absolute;
+      box-shadow: 0.1em 0.1em 0.5em 0.05em rgba(var(--foreground-color-rgb), 0.2); }
     body .outer-container .inner-container {
       display: grid;
       grid-template-columns: 87% 8%;

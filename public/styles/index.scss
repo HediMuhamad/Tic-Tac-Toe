@@ -80,7 +80,7 @@ body {
         overflow: hidden;
 
         background-color: transparent;
-        filter: blur(50px);
+        filter: blur(100px);
 
         &::before {
             content: '';
@@ -121,6 +121,7 @@ body {
 
         background-color: var(--background-color);
 
+
         &::before {
             content: '';
 
@@ -129,7 +130,7 @@ body {
 
             position: absolute;
 
-            // box-shadow: 0.1em 0.1em 0.5em 0.05em rgba($color: var(--foreground-color-rgb), $alpha: 0.2);
+            box-shadow: 0.1em 0.1em 0.5em 0.05em rgba($color: var(--foreground-color-rgb), $alpha: 0.2);
 
         }
 
