@@ -10,101 +10,105 @@
 </head>
 
 <body class="light-theme">
-    <div class="container">
-        <div class="table-container">
-            <div class="the-table">
-                <div id="first" class="O-marker"></div>
-                <div id="second" class="O-marker"></div>
-                <div id="third" class="O-marker"></div>
-                <div id="fourth" class="O-marker"></div>
-                <div id="fifth" class="O-marker"></div>
-                <div id="sixth" class="X-marker"></div>
-                <div id="seventh" class="X-marker"></div>
-                <div id="eighth" class="O-marker"></div>
-                <div id="ninth" class="O-marker"></div>
-            </div>
-        </div>
-        <div class="properties">
-            <div class="property O-marker-wins">
-                <div class="property-header"></div>
-                <div class="border-container">
-                    <div class="property-value-container">
-                        <p class="property-value">12</p>
-                    </div>
-                </div>
-                <div class="property-footer">
-                    <p class="property-footer-text">Wins</p>
+    <div class="blured-background">
+    </div>
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="table-container">
+                <div class="the-table">
+                    <div id="first" class="O-marker"></div>
+                    <div id="second" class="O-marker"></div>
+                    <div id="third" class="O-marker"></div>
+                    <div id="fourth" class="O-marker"></div>
+                    <div id="fifth" class="O-marker"></div>
+                    <div id="sixth" class="X-marker"></div>
+                    <div id="seventh" class="X-marker"></div>
+                    <div id="eighth" class="O-marker"></div>
+                    <div id="ninth" class="O-marker"></div>
                 </div>
             </div>
-            <div class="property X-marker-wins">
-                <div class="property-header"></div>
-                <div class="border-container">
-                    <div class="property-value-container">
-                        <p class="property-value">12</p>
+            <div class="properties">
+                <div class="property O-marker-wins">
+                    <div class="property-header"></div>
+                    <div class="border-container">
+                        <div class="property-value-container">
+                            <p class="property-value">12</p>
+                        </div>
+                    </div>
+                    <div class="property-footer">
+                        <p class="property-footer-text">Wins</p>
                     </div>
                 </div>
-                <div class="property-footer">
-                    <p class="property-footer-text">Wins</p>
-                </div>
-            </div>
-            <div class="property O-X-marker-draws">
-                <div class="property-header both-header">Both</div>
-                <div class="border-container">
-                    <div class="property-value-container">
-                        <p class="property-value">12</p>
+                <div class="property X-marker-wins">
+                    <div class="property-header"></div>
+                    <div class="border-container">
+                        <div class="property-value-container">
+                            <p class="property-value">12</p>
+                        </div>
+                    </div>
+                    <div class="property-footer">
+                        <p class="property-footer-text">Wins</p>
                     </div>
                 </div>
-                <div class="property-footer">
-                    <p class="property-footer-text">Draw</p>
-                </div>
-            </div>
-        </div>
-        <div class="settings">
-            <div class="setting id-setting your-id disabled">
-                <div class="hash">#</div>
-                <div class="border-container">
-                    <div class="id-value-container">
-                        <input type="text" maxlength="5" disabled="" class="id-value">
+                <div class="property O-X-marker-draws">
+                    <div class="property-header both-header">Both</div>
+                    <div class="border-container">
+                        <div class="property-value-container">
+                            <p class="property-value">12</p>
+                        </div>
                     </div>
-                    <div class="who-own-id-container yours-id">
-                        <div class="who-own-id">your's</div>
+                    <div class="property-footer">
+                        <p class="property-footer-text">Draw</p>
                     </div>
                 </div>
             </div>
-            <div class="setting id-setting against-id disabled">
-                <div class="hash">#</div>
-                <div class="border-container">
-                    <div class="id-value-container">
-                        <input type="text" maxlength="5" class="id-value" name="against-id" placeholder="AUTO"
-                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
-                    </div>
-                    <div class="who-own-id-container">
-                        <div class="who-own-id">against</div>
+            <div class="settings">
+                <div class="setting id-setting your-id disabled">
+                    <div class="hash">#</div>
+                    <div class="border-container">
+                        <div class="id-value-container">
+                            <input type="text" maxlength="5" disabled="" class="id-value">
+                        </div>
+                        <div class="who-own-id-container yours-id">
+                            <div class="who-own-id">your's</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="setting">
-                <div class="mode-container">
-                    <div onclick="modeBorderFunction(event)" class="mode-border single-player-mode">
-                        <div class="mode-circle left"></div>
-                        <div class="icon-container">
-                            <div class="single-player player-mode">
-                                <svg>
-                                    <use href="assets/single-user.svg#Layer_1"></use>
-                                </svg>
-                            </div>
-                            <div class="multi-player player-mode">
-                                <svg>
-                                    <use href="assets/multi-user.svg#Layer_1"></use>
-                                </svg>
+                <div class="setting id-setting against-id disabled">
+                    <div class="hash">#</div>
+                    <div class="border-container">
+                        <div class="id-value-container">
+                            <input type="text" maxlength="5" class="id-value" name="against-id" placeholder="AUTO"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        </div>
+                        <div class="who-own-id-container">
+                            <div class="who-own-id">against</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="mode-container">
+                        <div onclick="modeBorderFunction(event)" class="mode-border single-player-mode">
+                            <div class="mode-circle left"></div>
+                            <div class="icon-container">
+                                <div class="single-player player-mode">
+                                    <svg>
+                                        <use href="assets/single-user.svg#Layer_1"></use>
+                                    </svg>
+                                </div>
+                                <div class="multi-player player-mode">
+                                    <svg>
+                                        <use href="assets/multi-user.svg#Layer_1"></use>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="display-mode-control-container dark-now" onclick="themeSwitchController(event)"></div>
+            <div class="display-mode-control-container dark-now" onclick="themeSwitchController(event)"></div>
 
+        </div>
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="scripts/index.js"></script>

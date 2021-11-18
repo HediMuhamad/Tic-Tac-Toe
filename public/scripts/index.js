@@ -8,31 +8,30 @@ var currentPlayingMode = 'single-player-mode';
 var nextPlayingMode = 'multi-player-mode';
 
 var displayModeControlContainer = $('.display-mode-control-container')[0];
-const myId = (Math.floor((Math.random()*100000))-1);
+const myId = (Math.floor((Math.random() * 100000)) - 1);
 ($('.id-value')[0]).value = myId;
 
 ///////////////////////////////////////////////////////////////
 
-for(let i=0;i<childrenOfThetable.length;i++){
-    const randomChance = Math.floor(Math.random()*2);
-    if(randomChance==0){
+for (let i = 0; i < childrenOfThetable.length; i++) {
+    const randomChance = Math.floor(Math.random() * 2);
+    if (randomChance == 0) {
         childrenOfThetable[i].classList.add('O-marker');
-    }
-    else{
+    } else {
         childrenOfThetable[i].classList.add('X-marker');
     }
 }
 
-modeBorderFunction = (event)=>{
+modeBorderFunction = (event) => {
     $('.mode-border')[0].classList.replace(currentPlayingMode, nextPlayingMode);
-    currentPlayingMode = [nextPlayingMode, nextPlayingMode=currentPlayingMode][0];
-    $('.id-setting').each((itemIndex, itemSelf)=>{
+    currentPlayingMode = [nextPlayingMode, nextPlayingMode = currentPlayingMode][0];
+    $('.id-setting').each((itemIndex, itemSelf) => {
         itemSelf.classList.toggle('disabled');
     });
 }
 
 
-themeSwitchController = (event) =>{
+themeSwitchController = (event) => {
     console.log(nextTheme);
     console.log(currentTheme);
 
@@ -43,11 +42,68 @@ themeSwitchController = (event) =>{
 
     $('body')[0].classList.replace(currentTheme, nextTheme);
 
-    
+
     //re-adding mode-detector child transmission for make theme change more smooth
     setTimeout(() => {
         $('.mode-border *').css('transition', '0.25s ease-in-out');
     }, 0);
-    
-    currentTheme = [nextTheme, nextTheme=currentTheme][0];
+
+    currentTheme = [nextTheme, nextTheme = currentTheme][0];
 }
+
+
+var smallestTimeDuration = 10000;
+
+backCircleCreatorMethod = () => {
+    for (let index = 0; index < (Math.random() * 50) + 25; index++) {
+        $($('.blured-background')[0]).append('<div class="back-circle"></div>');
+    }
+
+    $('.back-circle').each(((index, circle) => {
+
+        let startSize = (Math.random() * 20) + 10;
+        let startLeft = $(Math.random() * ($('body')[0]).clientWidth)[0];
+        let startTop = $(Math.random() * ($('body')[0]).clientHeight)[0];
+
+        $(circle).css({
+            'background-color': `rgb(${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)})`,
+            'width': `${startSize}em`,
+            'left': `${startLeft}px`,
+            'top': `${startTop}px`,
+        });
+    }));
+}
+
+backCircleDirectionMethod = (...params) => {
+
+    console.log(params);
+
+    $('.back-circle').each(((index, circle) => {
+
+        let endSize = (Math.random() * 20) + 10;
+        let endLeft = ($(Math.random() * ($('body')[0]).clientWidth)[0]) - params[0];
+        let endTop = ($(Math.random() * ($('body')[0]).clientHeight)[0]) - params[1];
+        let timeDuration = (Math.random() * 10) + 10;
+        smallestTimeDuration = smallestTimeDuration > timeDuration ? timeDuration : smallestTimeDuration;
+
+        $(circle).css({
+            'background-color': `rgb(${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)},${Math.floor(Math.random()*156)})`,
+            'transition': `${smallestTimeDuration}s ease-in-out`,
+            'transform': `translate(${endLeft}px, ${endTop}px)`,
+            'width': `${endSize}em`
+        });
+    }));
+}
+
+CircleColorization = () => {
+
+    backCircleDirectionMethod(backCircleCreatorMethod());
+
+
+    setTimeout(() => {
+        backCircleDirectionMethod
+    }, smallestTimeDuration);
+
+}
+
+CircleColorization();
