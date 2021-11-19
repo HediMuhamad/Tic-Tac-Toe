@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +8,26 @@
     <link rel="stylesheet" href="/assets/fonts/stylesheet-gilroy.css">
     <link rel="stylesheet" href="/styles/index.css">
 </head>
+
 <body class="light-theme" onresize="manageDisplayingFunfact(event)" onload="manageDisplayingFunfact(event)">
-    <div class="fun-fact-container fun-fact-container-light-theme"></div>
+    <div class="fun-fact-container fun-fact-container-light-theme">
+        <div class="fun-fact-content">
+            <h1>Fun Fact about CATS</h1>
+            <p><%= funFactMessage %> </p>
+        </div>
+    </div>
     <div class="container">
         <div class="table-container">
             <div class="the-table">
-                <div id="first"   ></div>
-                <div id="second"  ></div>
-                <div id="third"   ></div>
-                <div id="fourth"  ></div>
-                <div id="fifth"   ></div>
-                <div id="sixth"   ></div>
-                <div id="seventh" ></div>
-                <div id="eighth"  ></div>
-                <div id="ninth"   ></div>
+                <div id="first" class="O-marker"></div>
+                <div id="second" class="O-marker"></div>
+                <div id="third" class="O-marker"></div>
+                <div id="fourth" class="O-marker"></div>
+                <div id="fifth" class="O-marker"></div>
+                <div id="sixth" class="X-marker"></div>
+                <div id="seventh" class="X-marker"></div>
+                <div id="eighth" class="O-marker"></div>
+                <div id="ninth" class="O-marker"></div>
             </div>
         </div>
         <div class="properties">
@@ -32,7 +38,9 @@
                         <p class="property-value">12</p>
                     </div>
                 </div>
-                <div class="property-footer"><p class="property-footer-text">Wins</p></div>
+                <div class="property-footer">
+                    <p class="property-footer-text">Wins</p>
+                </div>
             </div>
             <div class="property X-marker-wins">
                 <div class="property-header"></div>
@@ -41,7 +49,9 @@
                         <p class="property-value">12</p>
                     </div>
                 </div>
-                <div class="property-footer"><p class="property-footer-text">Wins</p></div>
+                <div class="property-footer">
+                    <p class="property-footer-text">Wins</p>
+                </div>
             </div>
             <div class="property O-X-marker-draws">
                 <div class="property-header both-header">Both</div>
@@ -50,26 +60,29 @@
                         <p class="property-value">12</p>
                     </div>
                 </div>
-                <div class="property-footer"><p class="property-footer-text">Draw</p></div>
+                <div class="property-footer">
+                    <p class="property-footer-text">Draw</p>
+                </div>
             </div>
         </div>
         <div class="settings">
-            <div class="setting id-setting your-id">
+            <div class="setting id-setting your-id disabled">
                 <div class="hash">#</div>
                 <div class="border-container">
                     <div class="id-value-container">
-                        <input type="text" maxlength="5" disabled class="id-value" name="your-id">
+                        <input type="text" maxlength="5" disabled="" class="id-value">
                     </div>
                     <div class="who-own-id-container yours-id">
                         <div class="who-own-id">your's</div>
                     </div>
                 </div>
             </div>
-            <div class="setting id-setting against-id">
+            <div class="setting id-setting against-id disabled">
                 <div class="hash">#</div>
                 <div class="border-container">
                     <div class="id-value-container">
-                        <input type="text" maxlength="5" class="id-value" name="against-id" placeholder="AUTO" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                        <input type="text" maxlength="5" class="id-value" name="against-id" placeholder="AUTO"
+                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                     </div>
                     <div class="who-own-id-container">
                         <div class="who-own-id">against</div>
@@ -82,10 +95,14 @@
                         <div class="mode-circle left"></div>
                         <div class="icon-container">
                             <div class="single-player player-mode">
-                                <svg><use href="assets/single-user.svg#Layer_1"></use></svg>
+                                <svg>
+                                    <use href="assets/single-user.svg#Layer_1"></use>
+                                </svg>
                             </div>
                             <div class="multi-player player-mode">
-                                <svg><use href="assets/multi-user.svg#Layer_1"></use></svg>
+                                <svg>
+                                    <use href="assets/multi-user.svg#Layer_1"></use>
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -93,9 +110,10 @@
             </div>
         </div>
         <div class="display-mode-control-container dark-now" onclick="themeSwitchController(event)"></div>
-        
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="scripts/index.js"></script>
+
 </body>
+
 </html>

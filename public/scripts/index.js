@@ -24,7 +24,10 @@ for (let i = 0; i < childrenOfThetable.length; i++) {
 
 modeBorderFunction = (event) => {
     $('.mode-border')[0].classList.replace(currentPlayingMode, nextPlayingMode);
-    currentPlayingMode = [nextPlayingMode, nextPlayingMode = currentPlayingMode][0];
+    currentPlayingMode = [nextPlayingMode, nextPlayingMode=currentPlayingMode][0];
+    $('.id-setting').each((itemIndex, itemSelf)=>{
+        itemSelf.classList.toggle('disabled');
+    });
 }
 
 

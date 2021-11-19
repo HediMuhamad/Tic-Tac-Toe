@@ -52,7 +52,7 @@ body {
 
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     background-color: var(--background-color);
@@ -89,9 +89,20 @@ body {
 
     .fun-fact-container{
         display: none;
+
+        justify-content: center;
+        align-items: center;
         
-        height: 40em;
-        aspect-ratio: 1;
+        width: 35em;
+        height: fit-content;
+        // aspect-ratio: 1.25;
+
+        margin-top: 10em;
+
+        padding: 2.5em;
+
+        box-sizing: border-box;
+        color: var(--background-color);
     
         &::before{
             content: '';
@@ -103,6 +114,25 @@ body {
             
             opacity: 0.9;
             border-radius: 2.5em;
+        }
+
+        .fun-fact-content{
+            width: 100%;
+            height: fit-content;
+
+            text-align: justify;
+
+            h1{
+                font-size: 2.8em;
+                margin-bottom: 0.35em;
+            }
+
+            p{
+                padding-left: 0.5em;
+                font-size: 1.8em;
+                word-wrap: break-word;
+            }
+
         }
     }
 
@@ -292,6 +322,12 @@ body {
 
             padding: 0% 3em;
 
+            .disabled {
+                opacity: 0.25;
+                pointer-events: none;
+                cursor: default;
+            }
+
             .setting {
                 width: 26%;
                 height: 100%;
@@ -362,6 +398,11 @@ body {
                             outline: none;
                             background-color: transparent;
                             color: inherit;
+
+                            &::-webkit-input-placeholder{
+                                color: inherit;
+                            }
+
                         }
                     }
 
@@ -407,7 +448,7 @@ body {
                         fill: var(--foreground-color);
                     }
 
-                    .mode-circle{
+                    .mode-circle {
                         margin-left: 0%;
                     }
 
@@ -425,7 +466,7 @@ body {
                         fill: var(--background-color);
                     }
 
-                    .mode-circle{
+                    .mode-circle {
                         margin-left: 53.5%;
                     }
 
@@ -443,7 +484,7 @@ body {
 
                     position: relative;
 
-                    & *{
+                    & * {
                         transition: 0.25s ease-in-out;
                     }
 
@@ -508,75 +549,75 @@ body {
 }
 
 
-@media (max-width:745px){
-    .container, .fun-fact-container{
+@media (max-width: 765px) {
+    .container, .fun-fact-container {
         font-size: 15px;
     }
 }
 
-@media (max-width:705px){
-    .container, .fun-fact-container{
+@media (max-width: 725px) {
+    .container, .fun-fact-container {
         font-size: 14px;
     }
 }
 
-@media (max-width:655px){
-    .container, .fun-fact-container{
+@media (max-width: 675px) {
+    .container, .fun-fact-container {
         font-size: 13px;
     }
 }
 
-@media (max-width:605px){
-    .container, .fun-fact-container{
+@media (max-width: 625px) {
+    .container, .fun-fact-container {
         font-size: 12px;
     }
 }
 
-@media (max-width:555px){
-    .container, .fun-fact-container{
+@media (max-width: 575px) {
+    .container, .fun-fact-container {
         font-size: 11px;
     }
 }
 
-@media (max-width:515px){
-    .container, .fun-fact-container{
+@media (max-width: 535px) {
+    .container, .fun-fact-container {
         font-size: 10px;
     }
 }
 
-@media (max-width:465px){
-    .container, .fun-fact-container{
+@media (max-width: 485px) {
+    .container, .fun-fact-container {
         font-size: 9px;
     }
 }
 
-@media (max-width:415px){
-    .container, .fun-fact-container{
+@media (max-width: 435px) {
+    .container, .fun-fact-container {
         font-size: 8px;
     }
 }
 
-@media (max-width:390px){
-    .container, .fun-fact-container{
+@media (max-width: 390px) {
+    .container, .fun-fact-container {
         font-size: 7px;
     }
 }
 
-@media (max-width:330px){
-    .container, .fun-fact-container{
+@media (max-width: 335px) {
+    .container, .fun-fact-container {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-width: 310px) {
+    .container, .fun-fact-container {
         font-size: 6px;
     }
 }
 
-@media (max-width:280px){
-    .container, .fun-fact-container{
+@media (max-width: 285px) {
+    .container, .fun-fact-container {
         font-size: 5.5px;
-    }
-}
-
-@media (max-width:260px){
-    .container, .fun-fact-container{
-        font-size: 5px;
     }
 }
 
@@ -587,14 +628,97 @@ body {
     }
 }
 
-// .display-fun-fact{
-//     .fun-fact-container{
-//         display: block !important;
-//     }
 
-//     body{
-//         padding: 7.5%;
-//         row-gap: 6em;
-//     }
 
-// }
+
+@media (max-height: 765px) {
+    .container, .fun-fact-container {
+        font-size: 15px;
+    }
+}
+
+@media (max-height: 725px) {
+    .container, .fun-fact-container {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 675px) {
+    .container, .fun-fact-container {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 625px) {
+    .container, .fun-fact-container {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 575px) {
+    .container, .fun-fact-container {
+        font-size: 11px;
+    }
+}
+
+@media (max-height: 535px) {
+    .container, .fun-fact-container {
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 485px) {
+    .container, .fun-fact-container {
+        font-size: 9px;
+    }
+}
+
+@media (max-height: 435px) {
+    .container, .fun-fact-container {
+        font-size: 8px;
+    }
+}
+
+@media (max-height: 390px) {
+    .container, .fun-fact-container {
+        font-size: 7px;
+    }
+}
+
+@media (max-height: 335px) {
+    .container, .fun-fact-container {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-height: 310px) {
+    .container, .fun-fact-container {
+        font-size: 6px;
+    }
+}
+
+@media (max-height: 285px) {
+    .container, .fun-fact-container {
+        font-size: 5.5px;
+    }
+}
+
+
+@media (max-height:240px){
+    .container, .fun-fact-container{
+        font-size: 4.5px;
+    }
+}
+
+
+.display-fun-fact{
+    .fun-fact-container{
+        display: flex !important;
+    }
+
+    body{
+        padding: 7.5%;
+        row-gap: 6em;
+    }
+
+}
