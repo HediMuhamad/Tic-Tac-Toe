@@ -65,7 +65,9 @@ body {
         body .container .table-container .the-table * {
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          transition: 0.5s linear;
+          opacity: 0; }
         body .container .table-container .the-table *::before {
           width: 80%;
           aspect-ratio: 1;
@@ -75,8 +77,10 @@ body {
           background-position: center;
           position: absolute; }
         body .container .table-container .the-table .O-marker::before {
+          opacity: 1;
           background-image: url("../assets/O-marker.svg"); }
         body .container .table-container .the-table .X-marker::before {
+          opacity: 1;
           background-image: url("../assets/X-marker.svg"); }
     body .container .properties {
       display: flex;

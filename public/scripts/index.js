@@ -1,4 +1,6 @@
-const childrenOfThetable = Array.from($('.the-table').children());
+const randomChoose = Math.round(Math.random()*2)==1;
+const whoAmI = randomChoose==1?'X-marker':'O-marker';
+const against = !randomChoose==1?'X-marker':'O-marker';
 const cellMarkers = ['../assets/X-marker.svg', '../assets/O-marker.svg'];
 
 var currentTheme = 'light-theme';
@@ -13,14 +15,27 @@ const myId = (Math.floor((Math.random()*100000))-1);
 
 ///////////////////////////////////////////////////////////////
 
-for(let i=0;i<childrenOfThetable.length;i++){
-    const randomChance = Math.floor(Math.random()*2);
-    if(randomChance==0){
-        childrenOfThetable[i].classList.add('O-marker');
+addMarker = (event) => {
+    const target = event.target;
+
+    if(!target.classList[0]){
+        target.classList.add(whoAmI);
+        target.style.opacity='1';
+        checkCells(whoAmI)
     }
-    else{
-        childrenOfThetable[i].classList.add('X-marker');
+
+}
+
+addAgainstMarker = (event) => {
+    event.preventDefault();
+    const target = event.target;
+
+    if(!target.classList[0]){
+        target.classList.add(against);
+        target.style.opacity='1';
+        checkCells(against)
     }
+
 }
 
 modeBorderFunction = (event)=>{

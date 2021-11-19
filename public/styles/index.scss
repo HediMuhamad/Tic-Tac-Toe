@@ -100,6 +100,8 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    transition: 0.5s linear;
+                    opacity: 0;
                 }
 
                 *::before {
@@ -114,10 +116,12 @@ body {
                 }
 
                 .O-marker::before {
+                    opacity: 1;
                     background-image: url('../assets/O-marker.svg');
                 }
 
                 .X-marker::before {
+                    opacity: 1;
                     background-image: url('../assets/X-marker.svg');
                 }
 
