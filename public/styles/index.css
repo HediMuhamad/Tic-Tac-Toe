@@ -335,3 +335,59 @@ body {
 @media (max-width: 285px) {
   .container {
     font-size: 5.5px; } }
+
+@media (max-width: 240px) {
+  .container {
+    font-size: 4.5px; } }
+
+@media (max-height: 765px) {
+  .container {
+    font-size: 15px; } }
+
+@media (max-height: 725px) {
+  .container {
+    font-size: 14px; } }
+
+@media (max-height: 675px) {
+  .container {
+    font-size: 13px; } }
+
+@media (max-height: 625px) {
+  .container {
+    font-size: 12px; } }
+
+@media (max-height: 575px) {
+  .container {
+    font-size: 11px; } }
+
+@media (max-height: 535px) {
+  .container {
+    font-size: 10px; } }
+
+@media (max-height: 485px) {
+  .container {
+    font-size: 9px; } }
+
+@media (max-height: 435px) {
+  .container {
+    font-size: 8px; } }
+
+@media (max-height: 390px) {
+  .container {
+    font-size: 7px; } }
+
+@media (max-height: 335px) {
+  .container {
+    font-size: 6.5px; } }
+
+@media (max-height: 310px) {
+  .container {
+    font-size: 6px; } }
+
+@media (max-height: 285px) {
+  .container {
+    font-size: 5.5px; } }
+
+@media (max-height: 240px) {
+  .container {
+    font-size: 4.5px; } }
