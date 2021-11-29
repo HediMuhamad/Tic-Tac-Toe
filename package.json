@@ -4,7 +4,7 @@
   "description": "Tic-tac-toe multiplayer and singleplayer game, in addition to a modern design.",
   "main": "router.js",
   "scripts": {
-    "test": "npm start",
+    "start": "node router.js",
     "active": "npm run program",
     "scss": "node-sass -o ./public/styles/ ./public/styles/",
     "watch:scss": "onchange \"./public/styles/*.scss\" -- npm run scss",
