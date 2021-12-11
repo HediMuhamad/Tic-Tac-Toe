@@ -159,7 +159,9 @@ body {
                 color: $my-gray;
 
                 .property-header {
-                    background: var(--background-color);
+                    background: url('../assets/both-sm.svg'), var(--background-color);
+                    background-size: 65% !important;
+                    // background: var(--background-color);
                 }
             }
 
@@ -188,10 +190,10 @@ body {
                 }
 
                 .both-header {
-                    width: 90% !important;
-                    aspect-ratio: 0 !important;
-                    transform: translateY(-230%);
-                    font-size: 1.1em;
+                    width: 75% !important;
+                    aspect-ratio: 1 !important;
+                    transform: translateY(-125%);
+                    // font-size: 1.1em;
                     text-align: center;
                 }
 
@@ -216,19 +218,35 @@ body {
                         justify-content: center;
                         align-items: center;
 
+                        @-moz-document url-prefix(){
+                            .property-value{
+                                padding-top: 15%;
+                            }
+                        }
+
                         .property-value {
-                            width: 50%;
+
                             height: 100%;
-
-                            margin-top: 10%;
-
+                            /* margin-top: 10%; */
                             font-size: 1.75em;
-                            line-height: 100%;
-
+                            /* line-height: 100%; */
                             text-align: center;
-                            word-wrap: break-word;
+                            /* word-wrap: break-word; */
                             writing-mode: vertical-lr;
                             text-orientation: upright;
+
+                            // width: 50%;
+                            // height: 100%;
+
+                            // margin-top: 10%;
+
+                            // font-size: 1.75em;
+                            // line-height: 100%;
+
+                            // text-align: center;
+                            // word-wrap: break-word;
+                            // writing-mode: vertical-lr;
+                            // text-orientation: upright;
                         }
 
                     }
@@ -277,6 +295,13 @@ body {
 
             .against-id {
                 color: $my-blue;
+                ::-webkit-input-placeholder{
+                    color: $my-blue !important;
+                }
+            }
+
+            .against-id::placeholder{
+                color: red !important;
             }
 
             .id-setting {
@@ -419,10 +444,6 @@ body {
 
                     position: relative;
 
-                    & * {
-                        transition: 0.25s ease-in-out;
-                    }
-
                     .mode-circle {
                         position: absolute;
 
@@ -448,6 +469,7 @@ body {
 
                         .single-player,
                         .multi-player {
+                            transition: 0.25s ease-in-out;
                             display: flex;
                             justify-content: center;
                             align-items: center;
